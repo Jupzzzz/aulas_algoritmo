@@ -5,7 +5,6 @@
 //variáveis dos loops do menu de questões
 int i, j, operacao, q, elemento;
 int matriz[3][5];
-//variáveis dos exercicios
 
 //funções úteis para os exercicios
 void limparBuffer(){
@@ -373,13 +372,118 @@ void questao12(){
     }
 }
 void questao13(){
+    int A[2][2], B[2][2], C[2][2];
     printf("Questao 13 em desenvolvimento\n");
+
+    //leitura da matriz A
+    printf("Informe os valores da matriz A (2 x 2): \n");
+    for ( i = 0; i < 2; i++){
+        for ( j = 0; j < 2; j++){
+            scanf("%d",&A[i][j]);
+        }
+    }
+    
+    //leitura da matriz B
+    printf("Informe os valores da matriz B (2 x 2): \n");
+    for ( i = 0; i < 2; i++){
+        for ( j = 0; j < 2; j++){
+            scanf("%d",&B[i][j]);
+        }
+    }
+    
+    //soma das matrizes
+    for ( i = 0; i < 2; i++){
+        for ( j = 0; j < 2; j++){
+            C[i][j]=A[i][j]+B[i][j];
+        }
+    }
+    
+    //imprimir a matriz A
+    printf("\nMatriz A:\n");
+    for ( i = 0; i < 2; i++){
+        for ( j = 0; j < 2; j++){
+            printf("|%4d",A[i][j]);
+        }
+        printf("|\n");
+    }
+    
+    //imprimir a matriz B
+    printf("\nMatriz B:\n");
+    for ( i = 0; i < 2; i++){
+        for ( j = 0; j < 2; j++){
+            printf("|%4d",B[i][j]);
+        }
+        printf("|\n");
+    }
+    
+    //imprimir matriz C (resultado)
+    printf("\nMatriz soma (A + B): \n");
+    for ( i = 0; i < 2; i++){
+        for ( j = 0; j < 2; j++){
+            printf("|%4d",C[i][j]);
+        }
+        printf("|\n");
+    }
 }
 void questao14(){
+    int matriz[3][3];
+    int soma=0;
     printf("Questao 14 em desenvolvimento\n");
+
+    printf("Informe os valores da matriz 3 x 3: \n");
+    for ( i = 0; i < 3; i++){
+        for ( j = 0; j < 3; j++){
+            scanf("%d",&matriz[i][j]);
+        }
+    }
+    
+    printf("\nMatriz:\n");
+    for ( i = 0; i < 3; i++){
+        for ( j = 0; j < 3; j++){
+            printf("|%4d",matriz[i][j]);
+        }
+        printf("|\n");
+    }
+    
+    for ( i = 0; i < 3; i++){
+        soma+=matriz[i][i];
+    }
+    
+    printf("\nSoma da diagonal principal: %d\n",soma);
 }
 void questao15(){
+    int n;
     printf("Questao 15 em desenvolvimento\n");
+
+    printf("Informe a ordem da matriz quadrada: ");
+    scanf("%d",&n);
+
+    float matriz[n][n];
+
+    printf("\nInforme os valores da matriz %d x %d: \n",n,n);
+
+    //entrada dos valores
+    for ( i = 0; i < n; i++){
+        for ( j = 0; j < n; j++){
+            scanf("%f",&matriz[i][j]);
+        }
+    }
+
+    //dividindo os elementos por 2
+    for ( i = 0; i < n; i++){
+        for ( j = 0; j < n; j++){
+            matriz[i][j]=matriz[i][j]/2;
+        }      
+    }
+    
+    //impressão da matriz resultante
+    printf("\nmatriz com elementos divididos por 2: \n");
+    for ( i = 0; i < n; i++){
+        for ( j = 0; j < n; j++){
+            printf("|%6.2f",matriz[i][j]);
+        }
+        printf("|\n");
+    }
 }
 int main(){
 do{
